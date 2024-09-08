@@ -7,7 +7,11 @@ async function prediction(){
     let elements = document.getElementsByTagName("input");
     predictionData = {};
     for(let i = 0; i< 10;i++){
-        predictionData[elements[i].name] = elements[i].value;
+        if(elements[i].value){
+            predictionData[elements[i].name] = elements[i].value;
+        }else{
+            predictionData[elements[i].name] = 0;
+        }
     }
     
     var resp = await fetch(BackEndServer+"/predict" ,{
