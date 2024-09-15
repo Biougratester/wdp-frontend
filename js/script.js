@@ -23,7 +23,6 @@ async function prediction(){
         body: JSON.stringify(predictionData),
     })
     var resptxt = await resp.json()
-    console.log(resptxt)
     let pclass,conf;
     if(parseFloat(resptxt.confidence_1)>0.5){
         pclass = resptxt.class_1
