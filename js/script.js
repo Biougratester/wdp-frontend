@@ -44,7 +44,7 @@ async function prediction(){
         donutChart = new Chart(document.getElementById("predictionChart"), {
             type: "doughnut",
             data: {
-            labels: [resptxt.class_1, resptxt.class_2],
+            labels: ["Potable", "None-Potable"],
             datasets: [{
                 data: [ parseFloat(resptxt.confidence_1)*100, parseFloat(resptxt.confidence_2)*100],
                 backgroundColor: [
